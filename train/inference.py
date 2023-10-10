@@ -170,7 +170,7 @@ def main():
     parser.add_argument(
         "--config",
         type=str,
-        default="configs/v1-inference-chinese.yaml",
+        default="configs/v1-inference-chinese.Fyaml",
         help="path to config which constructs model",
     )
     parser.add_argument(
@@ -209,7 +209,7 @@ def main():
     device_id = int(os.getenv("DEVICE_ID", 0))
     ms.context.set_context(
         mode=ms.context.GRAPH_MODE,
-        device_target="GPU",
+        device_target="Ascend",
         device_id=device_id,
         max_device_memory="30GB"
     )
