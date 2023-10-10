@@ -124,7 +124,7 @@ def main():
     parser.add_argument(
         "--n_iter",
         type=int,
-        default=2,
+        default=50,
         help="sample this often",
     )
     parser.add_argument(
