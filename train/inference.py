@@ -174,15 +174,15 @@ def main():
         help="path to config which constructs model",
     )
     parser.add_argument(
-        "--model_path",
+        "--ckpt_path",
         type=str,
         default="models",
         help="path to checkpoint of model",
     )
     parser.add_argument(
-        "--model_name",
+        "--ckpt_name",
         type=str,
-        default="model.ckpt",
+        default="wukong-huahua-ms.ckpt",
         help="path to checkpoint of model",
     )
     parser.add_argument(
@@ -199,9 +199,9 @@ def main():
         default="autocast"
     )
     parser.add_argument("--enable_lora", default=True, type=str2bool, help="enable lora")
-    parser.add_argument("--lora_ckpt_filepath1", type=str, default="cbp_wkhh_txt2img_lora-25_38.ckpt", help="path to checkpoint of model with lora")
-    parser.add_argument("--lora_ckpt_filepath2", type=str, default="rob_wkhh_txt2img_lora_1-25_33.ckpt", help="path to checkpoint of model with lora")
-    parser.add_argument("--lora_ckpt_filepath3", type=str, default="pan_wkhh_txt2img_lora-25_60.ckpt",help="path to checkpoint of model with lora")
+    parser.add_argument("--model_path1", type=str, default="cbp_wkhh_txt2img_lora-25_38.ckpt", help="path to checkpoint of model with lora1")
+    parser.add_argument("--model_path2", type=str, default="rob_wkhh_txt2img_lora_1-25_33.ckpt", help="path to checkpoint of model with lora2")
+    parser.add_argument("--model_path3", type=str, default="pan_wkhh_txt2img_lora-25_60.ckpt",help="path to checkpoint of model with lora3")
     opt = parser.parse_args()
     work_dir = os.path.dirname(os.path.abspath(__file__))
     print(f"WORK DIR:{work_dir}")
