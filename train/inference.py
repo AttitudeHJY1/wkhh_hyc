@@ -170,7 +170,7 @@ def main():
     parser.add_argument(
         "--config",
         type=str,
-        default="configs/v1-inference-chinese.Fyaml",
+        default="configs/v1-inference-chinese.yaml",
         help="path to config which constructs model",
     )
     parser.add_argument(
