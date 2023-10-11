@@ -219,7 +219,7 @@ def main():
     if not os.path.isabs(opt.config):
         opt.config = os.path.join(work_dir, opt.config)
     config = OmegaConf.load(f"{opt.config}")
-    model = load_model_from_config(config, f"{os.path.join(opt.model_path, opt.model_name)}")
+    model = load_model_from_config(config, f"{os.path.join(opt.ckpt_path, opt.ckpt_name)}")
 
     if opt.enable_lora:
         # 第一个lora文件加载
