@@ -209,7 +209,7 @@ def main():
     device_id = int(os.getenv("DEVICE_ID", 0))
     ms.context.set_context(
         mode=ms.context.GRAPH_MODE,
-        device_target="Ascend",
+        device_target="GPU",
         device_id=device_id,
         max_device_memory="30GB"
     )
