@@ -199,9 +199,9 @@ def main():
         default="autocast"
     )
     parser.add_argument("--enable_lora", default=True, type=str2bool, help="enable lora")
-    parser.add_argument("--model_path1", type=str, default="cbp_wkhh_txt2img_lora-25_38.ckpt", help="path to checkpoint of model with lora1")
-    parser.add_argument("--model_path2", type=str, default="rob_wkhh_txt2img_lora_1-25_33.ckpt", help="path to checkpoint of model with lora2")
-    parser.add_argument("--model_path3", type=str, default="pan_wkhh_txt2img_lora-25_60.ckpt",help="path to checkpoint of model with lora3")
+    parser.add_argument("--lora_model_path1", type=str, default="cbp_wkhh_txt2img_lora-25_38.ckpt", help="path to checkpoint of model with lora1")
+    parser.add_argument("--lora_model_path2", type=str, default="rob_wkhh_txt2img_lora_1-25_33.ckpt", help="path to checkpoint of model with lora2")
+    parser.add_argument("--lora_model_path3", type=str, default="pan_wkhh_txt2img_lora-25_60.ckpt",help="path to checkpoint of model with lora3")
     opt = parser.parse_args()
     work_dir = os.path.dirname(os.path.abspath(__file__))
     print(f"WORK DIR:{work_dir}")
@@ -223,15 +223,15 @@ def main():
 
     if opt.enable_lora:
         # 第一个lora文件加载
-        lora_ckpt_path1 = opt.lora_ckpt_filepath1
+        lora_ckpt_path1 = opt.lora_model_path1
         lora_param_dict1 = ms.load_checkpoint(lora_ckpt_path1)
         ms.load_param_into_net(model, lora_param_dict1)
         # 第二个lora文件加载
-        lora_ckpt_path2 = opt.lora_ckpt_filepath2
+        lora_ckpt_path2 = opt.lora_model_path2
         lora_param_dict2 = ms.load_checkpoint(lora_ckpt_path2)
         ms.load_param_into_net(model, lora_param_dict2)
         # 第三个lora文件加载
-        lora_ckpt_path3 = opt.lora_ckpt_filepath3
+        lora_ckpt_path3 = opt.lora_model_path3
         lora_param_dict3 = ms.load_checkpoint(lora_ckpt_path3)
         ms.load_param_into_net(model, lora_param_dict3)
 
